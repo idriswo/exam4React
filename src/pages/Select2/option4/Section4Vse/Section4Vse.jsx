@@ -19,9 +19,8 @@ const Section4Vse = memo(() => {
           <div className="mb-6 overflow-hidden">
             <img 
               src={img1} 
-              alt="Частный дом" 
-              className="w-full h-[400px]  object-cover hover:scale-105 transition-transform duration-500"
               alt="Таунхаус 136 м" 
+              className="w-full h-[400px]  object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
