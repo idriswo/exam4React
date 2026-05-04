@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../../../config/api.js';
 
 const SectionId1 = memo(() => {
     const { id } = useParams();
@@ -8,7 +9,7 @@ const SectionId1 = memo(() => {
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/articles1/${id}`)
+        axios.get(`${API_URL}/articles1/${id}`)
             .then(res => setArticle(res.data))
             .catch(err => console.error("Хатогӣ ҳангоми боргирӣ:", err));
     }, [id]);

@@ -6,7 +6,8 @@ import SectionCarsd from './SectionCard/SectionCarsd';
 import axios from 'axios';
 import Section2 from './Section2/Section2';
 import Section4Vse from './Section4Vse/Section4Vse';
-const url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/projects`
+import API_URL from '../../../config/api.js';
+const url = `${API_URL}/projects`
 const VseDoma = memo(() => {
   const [projects, setProjects] = useState([]);
   async function getProjects() {

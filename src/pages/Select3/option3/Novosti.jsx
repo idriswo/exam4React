@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../../../config/api.js';
 
 const Novosti = memo(() => {
   const [articles, setArticles] = useState([]);
@@ -11,7 +12,7 @@ const Novosti = memo(() => {
   const getArticles = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/articles1`);
+      const response = await axios.get(`${API_URL}/articles1`);
       setArticles(response.data);
     } catch (error) {
       console.log(error);

@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import API_URL from '../../../../config/api.js';
 
 
 const Section2SMIonas = memo(() => {
@@ -8,7 +9,7 @@ const Section2SMIonas = memo(() => {
 
     const getArticles = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/articles`);
+            const response = await axios.get(`${API_URL}/articles`);
             setArticles(response.data);
         } catch (error) {
             console.log(error);

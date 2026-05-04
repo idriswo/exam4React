@@ -1,5 +1,6 @@
 import { memo, useEffect, useState } from 'react';
 import axios from 'axios';
+import API_URL from '../../../config/api.js';
 import SectionCarsd from '../option4/SectionCard/SectionCarsd';
 import Section2 from '../option4/Section2/Section2';
 import Section12 from '../../Home/Section12/Secrion12';
@@ -10,7 +11,7 @@ const OdnoEtazniy = memo(() => {
   const [projects, setProjects] = useState([]);
   const getProjects = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/projects`);
+      const res = await axios.get(`${API_URL}/projects`);
       const filtered = res.data.filter(item => item.floors === '1');
       setProjects(filtered);
     } catch (error) {

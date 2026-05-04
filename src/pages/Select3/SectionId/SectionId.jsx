@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../../../config/api.js';
 
 const SectionId = memo(() => {
     const { id } = useParams();
@@ -11,7 +12,7 @@ const SectionId = memo(() => {
     useEffect(() => {
         const fetchDetail = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/articles/${id}`);
+                const response = await axios.get(`${API_URL}/articles/${id}`);
                 setArticle(response.data);
             } catch (error) {
                 console.error("Хатогӣ ҳангоми гирифтани маълумот:", error);

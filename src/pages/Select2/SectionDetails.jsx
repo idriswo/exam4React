@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../../config/api.js';
 
 const SectionDetails = memo(() => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const SectionDetails = memo(() => {
 
   const getProject = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/projects/${id}`);
+      const res = await axios.get(`${API_URL}/projects/${id}`);
 
       setProject(res.data);
 
